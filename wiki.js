@@ -11,7 +11,13 @@ class Wiki extends React.Component {
   }
 
   onKeyUp = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      hangulKeyboard();
+    }, 100);
   }
 
   render() {
@@ -19,7 +25,7 @@ class Wiki extends React.Component {
       return 'loading...';
     } else {
       return  <div>
-                <div><input type="text" onKeyUp={this.onKeyUp}/></div>
+                <div><input id="hangul-editor" type="text" onKeyUp={this.onKeyUp}/></div>
                 {this.state.data.map((entry) => {
                   return  <div key="entry.title">
                             <div>{entry.title}</div>
@@ -34,6 +40,7 @@ class Wiki extends React.Component {
                             
                           </div>;
                 })}
+                <div id="keyboard"></div>
               </div>;
     }
   }

@@ -1,0 +1,123 @@
+#hangul-keyboard {
+	line-height: 20px;
+	font-size: 1em
+}
+
+#hangul-keyboard button {
+	float: left;
+	display: block;
+	margin: 1px;
+	height: 3em;
+	text-align: center;
+	color: gray
+}
+
+#hangul-keyboard .hangul-label-natural {
+	color: #e0115f
+}
+
+#hangul-keyboard .hangul-label-shift {
+	color: #057cb5
+}
+
+#hangul-keyboard .hangul-label-natural,
+#hangul-keyboard .hangul-label-shift {
+	margin-top: -5px;
+	line-height: 20px;
+	text-align: center;
+	cursor: default
+}
+
+#hangul-keyboard .hangul-label-reference {
+	color: gray;
+	font-size: .9em;
+	line-height: 12px;
+	text-align: left;
+	cursor: default
+}
+
+#hangul-k29 .hangul-label-reference,
+#hangul-k32 .hangul-label-reference {
+	color: #000
+}
+
+#hangul-keyboard .hangul-recessed span {
+	color: #3C0
+}
+
+#hangul-keyboard .hangul-recessed-hover span {
+	color: #ffd800
+}
+
+#hangul-keyboard .hangul-clear {
+	clear: both
+}
+
+@media only screen and (max-width:640px) {
+	#hangul-keyboard button {
+		width: 88px
+	}
+	#hangul-keyboard .hangul-key {
+		width: 43px
+	}
+}
+
+@media only screen and (min-width:641px) and (max-width:840px) {
+	#keyboard {
+		width: 630px
+	}
+}
+
+@media only screen and (min-width:841px) {
+	
+}
+
+@media only screen and (min-width:641px) {
+	#hangul-keyboard {
+		width: 630px
+	}
+	#hangul-keyboard button {
+		line-height: 2.75em
+	}
+	#hangul-keyboard .hangul-key {
+		width: 40px
+	}
+	#hangul-backspace {
+		width: 78px
+	}
+	#hangul-tab {
+		width: 62px
+	}
+	#hangul-k25 {
+		width: 56px
+	}
+	#hangul-caps-lock {
+		width: 76px
+	}
+	#hangul-enter {
+		width: 84px
+	}
+	#hangul-left-shift {
+		width: 46px
+	}
+	#hangul-right-shift {
+		width: 114px
+	}
+	#hangul-space {
+		width: 246px;
+		text-align: center
+	}
+	#hangul-right-ctrl,
+	#hangul-right-alt,
+	#hangul-escape {
+		width: 62px
+	}
+	#hangul-left-ctrl,
+	#hangul-left-alt,
+	#hangul-clear {
+		width: 60px
+	}
+}
+
+;
+
