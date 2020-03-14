@@ -8,14 +8,62 @@
 input {
   height: 1.5em;
   font-size: 1.5em;
-  width: calc(100% - 3em);
+  width: calc(100% - 3.5em);
+}
+.clearSearch {
+  color: darkred;
+  font-size: 1.25em;
+  vertical-align: inherit;
+  position: relative;
+  left: -1.5em;
 }
 .korea {
-  padding: 0 5px;
   height: 2.5em;
   vertical-align: bottom;
   cursor: pointer;
 }
-#hangul-keyboard.hidden {
-  display: none;
+.korea.active {
+  box-shadow: 0px 0px 5px blue;
+  border-radius: 8px;
+}
+#keyboard {
+  display: flex;
+}
+#hangul-keyboard {
+  margin: 0.5em auto 0 auto;
+}
+
+#grid {
+  display:flex;
+}
+#previews {
+  width: 20em;
+  border-right: solid black 1px;
+  height: 100vh;
+  padding-right: 1em;
+}
+#previews .preview {
+  cursor: pointer;
+  padding: 1em;
+  border-bottom: solid black 1px;
+}
+#previews .preview:last-of-type {
+  border-bottom: none;
+}
+#previews .preview.selected {
+  box-shadow: 0px 0px 5px rgb(133, 0, 0);
+}
+#previews .preview div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#right-grid {
+  flex-grow: 1;
+  padding-left: 1em;
+}
+#view, #editor {
+  display: flex;
+  flex-grow: 1;
+  margin-top: 1em;
 }

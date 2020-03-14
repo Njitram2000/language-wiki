@@ -795,12 +795,6 @@ function hangulKeyboard() {
   a.keyboard.prototype.getFontSize = function() {
     return this.fontSize
   };
-  /*
-  a.keyboard.prototype.setFontSize = function(e) {
-    this.fontSize = e;
-    this.textbox.style.fontSize = this.fontSize + "px"
-  };
-  */
   a.keyboard.prototype.onEsc = function() {
     this.switchLayout();
     this.customOnEsc()
@@ -1245,15 +1239,6 @@ function hangulKeyboard() {
       f = true
     }
   } catch (b) {}
-  /*
-  if (document.cookie.indexOf("read=true") != -1) {
-    document.getElementById("gdpr").style.display = "none"
-  }
-  document.getElementById("gdpr-btn").onclick = function() {
-    document.getElementById("gdpr").style.display = "none";
-    document.cookie = "read=true"
-  };
-  */
   var g = null;
   var n = {
     undo: [],
@@ -1262,7 +1247,7 @@ function hangulKeyboard() {
     fontSize: 20
   };
   var s = "korean";
-  g = new a.keyboard("hangul-keyboard", "hangul-input");
+  g = new a.keyboard("keyboard", "hangul-input");
   var r = g.textbox;
   r.focus();
   if (o && f) {
@@ -1282,11 +1267,6 @@ function hangulKeyboard() {
       }
     }
   }
-  /*
-  if (n.fontSize) {
-    g.setFontSize(n.fontSize)
-  }
-  */
   var l = [{
     Id: "Korean",
     Name: "Korean",
@@ -1845,130 +1825,4 @@ function hangulKeyboard() {
       localStorage.setItem(s, JSON.stringify(n))
     }
   }
-  /*
-  document.getElementById("shrink").onclick = function() {
-    if (n.fontSize < 14) {
-      return
-    }
-    n.fontSize -= 2;
-    g.setFontSize(n.fontSize);
-    g.drawKeyboard();
-    if (o && f) {
-      localStorage.setItem(s, JSON.stringify(n))
-    }
-    r.focus()
-  };
-  document.getElementById("enlarge").onclick = function() {
-    if (n.fontSize > 36) {
-      return
-    }
-    n.fontSize += 2;
-    g.setFontSize(n.fontSize);
-    g.drawKeyboard();
-    if (o && f) {
-      localStorage.setItem(s, JSON.stringify(n))
-    }
-    r.focus()
-  };
-  document.getElementById("email").onclick = function() {
-    this.href = "mailto: ?body=" + r.value;
-    r.focus();
-    return true
-  };
-  document.getElementById("selectAll").onclick = function() {
-    a.util.setCaretPosition(r, 0, r.value.length);
-    ga("send", "event", "Keyboard", "click", "Select");
-    r.focus()
-  };
-  document.getElementById("copy").onclick = function() {
-    a.util.setCaretPosition(r, 0, r.value.length);
-    var e = document.execCommand("copy");
-    if (e) {
-      a.util.setCaretPosition(r, r.value.length, r.value.length);
-      ga("send", "event", "Keyboard", "click", "Copy")
-    } else {
-      alert("Your browser does not allow automated copy. To copy the text in the text area, you can click Select All button and right click on the selected text. Then click the Copy option.");
-      ga("send", "event", "Keyboard", "click", "Copy Fail")
-    }
-    r.focus()
-  };
-  if (o && f) {
-    if (n.undo.length > 0) {
-      r.value = n.undo.pop()
-    }
-    document.getElementById("clearAll").onclick = function() {
-      if (r.value.length < 10 || confirm("Are you sure you want to clear all the text?")) {
-        ga("send", "event", "Keyboard", "click", "Clear");
-        n.undo = [];
-        n.redo = [];
-        localStorage.setItem(s, JSON.stringify(n));
-        r.value = ""
-      }
-      r.focus()
-    };
-    document.getElementById("undo").onclick = function() {
-      if (n.undo.length == 0) {
-        return
-      }
-      var e = n.undo.pop();
-      if (e != r.value) {
-        n.redo.push(r.value);
-        r.value = e
-      } else {
-        r.value = (n.undo.length == 0 ? "" : n.undo[n.undo.length - 1]);
-        n.redo.push(e)
-      }
-      localStorage.setItem(s, JSON.stringify(n));
-      r.focus()
-    };
-    document.getElementById("redo").onclick = function() {
-      if (n.redo.length == 0) {
-        return
-      }
-      var e = n.redo.pop();
-      r.value = e;
-      n.undo.push(e);
-      localStorage.setItem(s, JSON.stringify(n));
-      r.focus()
-    };
-    setInterval(function() {
-      var e = r.value;
-      if (n.undo.length == 0 && e.length == 0) {
-        return
-      }
-      if (n.undo.length == 0 || e != n.undo[n.undo.length - 1]) {
-        n.undo.push(e);
-        localStorage.setItem(s, JSON.stringify(n))
-      }
-    }, 3000)
-  } else {
-    document.getElementById("undo").style.display = "none";
-    document.getElementById("redo").style.display = "none";
-    document.getElementById("clearAll").style.display = "none"
-  }
-  document.getElementById("postToTwitter").onclick = function() {
-    ga("send", "event", "Keyboard", "click", "Twitter");
-    document.getElementById("postToTwitter").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(r.value);
-    r.focus();
-    return true
-  };
-  document.getElementById("searchGoogle").onclick = function() {
-    ga("send", "event", "Keyboard", "click", "Google");
-    document.getElementById("searchGoogle").href = "https://www.google.com/search?ie=UTF-8&q=" + encodeURIComponent(r.value);
-    r.focus();
-    return true
-  };
-  document.getElementById("translateGoogle").onclick = function() {
-    ga("send", "event", "Keyboard", "click", "Translate");
-    document.getElementById("translateGoogle").href = "https://translate.google.com/#view=home&op=translate&sl=ko&tl=en&text=" + encodeURIComponent(r.value);
-    r.focus();
-    return true
-  };
-  document.getElementById("saveAsTextFile").onsubmit = function() {
-    ga("send", "Keyboard", "Save", "send", (r.value.length > 0 ? "valid" : "invalid"));
-    document.getElementById("data").value = r.value;
-    r.focus();
-    return true
-  }
-  */
 };
