@@ -1,14 +1,14 @@
 #wiki {
-  width: 80em;
+  width: 100em;
   margin: 0 auto;
 }
 .examples {
   margin: 1em;
 }
-input {
+#search input {
   height: 1.5em;
   font-size: 1.5em;
-  width: calc(100% - 3.5em);
+  width: calc(100% - 8em);
 }
 .clearSearch {
   color: darkred;
@@ -17,11 +17,28 @@ input {
   position: relative;
   left: -1.5em;
 }
-.korea {
-  height: 2.5em;
+.edit, .new, .save, .korea {
   vertical-align: bottom;
   cursor: pointer;
 }
+.korea {
+  height: 2.5em;
+}
+.edit {
+  font-size: 2.1em;
+  margin-left: 0.5em;
+  padding-bottom: 0.125em;
+}
+.new {
+  font-size: 2.6em;
+  margin-left: 0.5em;
+}
+.save {
+  float: right;
+  margin: 0.2em auto;
+  font-size: 2.5em;
+}
+
 .korea.active {
   box-shadow: 0px 0px 5px blue;
   border-radius: 8px;
@@ -62,8 +79,26 @@ input {
   flex-grow: 1;
   padding-left: 1em;
 }
-#view, #editor {
-  display: flex;
-  flex-grow: 1;
+#view {
   margin-top: 1em;
+}
+#view #edit-button,
+#view #save-button {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1em;
+  width: 5em;
+  cursor: pointer;
+  border-radius: 0.2em;
+}
+#view #edit-button.edit-mode {
+  box-shadow: 0px 0px 5px blue;
+}
+#view fieldset input,
+#view fieldset textarea {
+  width: 100%;
+  border: none;
+}
+legend {
+  color: grey;
 }

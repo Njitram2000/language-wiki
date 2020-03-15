@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "title": "Topic marking particle 은/는",
     "tags": [
       "particle",
@@ -7,18 +8,10 @@
     ],
     "source": "TTMIK Level 1 Lesson 9 p50",
     "details": "Topic marking particle 은/는. 'As for me...'",
-    "examples": [
-      {
-        "ko": "저는 학생이에요",
-        "en": "As for me, I'm a student"
-      },
-      {
-        "ko": "내가 제일 잘 나가",
-        "en": "I am the best"
-      }
-    ]
+    "examples": "저는 학생이에요\nAs for me, I'm a student\n\n내가 제일 잘 나가\nI am the best"
   },
   {
+    "id": "2",
     "title": "Subject marking particle 이/가",
     "tags": [
       "particle",
@@ -26,14 +19,10 @@
     ],
     "source": "TTMIK Level 1 Lesson 9 p50",
     "details": "Subject marking particle 이/가. The subject of the sentence. Usually the one performing an action on the object.",
-    "examples": [
-      {
-        "ko": "내가 제일 잘 나가",
-        "en": "I am the best"
-      }
-    ]
+    "examples": "내가 제일 잘 나가\nI am the best"
   },
   {
+    "id": "3",
     "title": "Object marking particle 을/를",
     "tags": [
       "particle",
@@ -41,15 +30,6 @@
     ],
     "source": "TTMIK Level 2 Lesson 2 p14",
     "details": "Object marking particle 을/를. That to which the action happens",
-    "examples": [
-      {
-        "ko": "저는 학생이에요",
-        "en": "As for me, I'm a student"
-      },
-      {
-        "ko": "사과를 먹어요",
-        "en": "I'm eating an apple"
-      }
-    ]
+    "examples": "저는 학생이에요\nAs for me, I'm a student\n\n사과를 먹어요\nI'm eating an apple"
   }
 ]

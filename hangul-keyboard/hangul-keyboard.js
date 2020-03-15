@@ -15,6 +15,7 @@ function resetHangulBindings() {
   }
   
   onTextfieldKeyUp = onTextfieldKeyDown = onTextfieldKeyPress = null;
+  document.getElementById("keyboard").innerHTML = '';
 }
 
 function hangulKeyboard() {
