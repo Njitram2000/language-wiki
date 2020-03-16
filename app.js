@@ -4,6 +4,7 @@ BodyParser = require('body-parser');
 const app = express()
 const port = 45123
 
+app.use(express.json());
 app.use(BodyParser.json())
 app.use(BodyParser.urlencoded({ extended: true }))
 
@@ -17,9 +18,8 @@ app.get('/wiki',function(req,res) {
   res.sendFile('wiki.json', { root: __dirname });
 });
 
-app.put('/wiki',function(req,res) {
-  console.log(req.body);
-  fs.writeFile(__dirname+'/wiki.json', JSON.stringify(req.body), function(err) {
+app.post('/wiki',function(req,res) {
+  fs.writeFile(__dirname+'/wiki.json', JSON.stringify(req.body, null, 2), function(err) {
     if (err) throw err;
     console.log('The file has been saved!');
     res.send();

@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "title": "Topic marking particle 은/는",
     "tags": [
       "particle",
@@ -11,7 +11,7 @@
     "examples": "저는 학생이에요\nAs for me, I'm a student\n\n내가 제일 잘 나가\nI am the best"
   },
   {
-    "id": "2",
+    "id": 2,
     "title": "Subject marking particle 이/가",
     "tags": [
       "particle",
@@ -22,7 +22,7 @@
     "examples": "내가 제일 잘 나가\nI am the best"
   },
   {
-    "id": "3",
+    "id": 3,
     "title": "Object marking particle 을/를",
     "tags": [
       "particle",
