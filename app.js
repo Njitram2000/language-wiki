@@ -21,7 +21,6 @@ app.get('/wiki',function(req,res) {
 app.post('/wiki',function(req,res) {
   fs.writeFile(__dirname+'/wiki.json', JSON.stringify(req.body, null, 2), function(err) {
     if (err) throw err;
-    console.log('The file has been saved!');
     res.send();
   });
 });

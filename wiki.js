@@ -167,8 +167,15 @@ class Wiki extends React.Component {
                         </span>
                       : undefined
                     }
+                    {
+                      this.state.selectedId >= 0
+                      ? <span onClick={(e) => { e.preventDefault(); this.deleteEntry(this.state.selectedId);}}>
+                          <i className='delete fas fa-trash-alt'></i>
+                        </span>
+                      : undefined
+                    }
                   </div>
-                  <View entry={selectedEntry} editMode={this.state.editMode} virtualKeyboard={virtualKeyboard} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry} />
+                  <View entry={selectedEntry} editMode={this.state.editMode} virtualKeyboard={virtualKeyboard} updateEntry={this.updateEntry} />
                   <HangulKeyboard show={this.state.showVirtualKeyboard && this.state.focussedInput !== null} />
                 </div>
               </div>;
@@ -189,7 +196,7 @@ class Preview extends React.Component {
     return  <div className={previewClass}
                 onClick={this.props.onClick}>
               <div className='title'>{this.props.entry.title}</div>
-              <div className='tags'>{this.props.entry.tags.map((tag) => `#${tag} `)}</div>
+              <div className='tags'>{this.props.entry.tags.split('\n').map((tag) => `#${tag} `)}</div>
               <div>{this.props.entry.source}</div>
             </div>;
   }
@@ -200,17 +207,13 @@ class View extends React.Component {
     super(props);
   }
 
-  deleteEntry() {
-    this.props.deleteEntry(this.props.entry.id);
-  }
-
   updateEntry() {
     if (this.props.editMode) {
       var entry = {
         // Using the current timestamp ensures a unique id for new entries
         id: this.props.entry.id >= 0 ? this.props.entry.id : Date.now(),
         title: $('[data-name=title]').val(),
-        tags: $('[data-name=tags]').val().split('\n'),
+        tags: $('[data-name=tags]').val(),
         source: $('[data-name=source]').val(),
         details: $('[data-name=details]').val(),
         examples: $('[data-name=examples]').val()
@@ -234,9 +237,9 @@ class View extends React.Component {
                 <legend>Tags</legend>
                 {
                   this.props.editMode
-                  ? <TextArea name='tags' value={this.props.entry.tags ? this.props.entry.tags.join('\n') : undefined}
+                  ? <TextArea name='tags' value={this.props.entry.tags}
                               virtualKeyboard={this.props.virtualKeyboard} />
-                  : this.props.entry.tags ? this.props.entry.tags.map((tag) => `#${tag} `) : undefined
+                  : this.props.entry.tags ? this.props.entry.tags.split('\n').map((tag) => `#${tag} `) : undefined
                 }
               </fieldset>
               <fieldset>
