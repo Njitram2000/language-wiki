@@ -182,7 +182,7 @@ class Wiki extends React.Component {
         focussedInput: this.state.focussedInput,
         setFocussedInput: this.setFocussedInput
       }
-      return  <div id="grid" onKeyUp={(e) => {if(e.ctrlKey || e.key === '²') this.toggleVirtualKeyboard()}}>
+      return  <div id="grid" onKeyUp={(e) => {if(e.ctrlKey && e.key === '<') { e.preventDefault(); this.toggleVirtualKeyboard()}}}>
                 <div id='previews'>
                   {this.state.searchResults.map((entry) => {
                     return <Preview entry={entry} key={entry.id}
