@@ -3,8 +3,7 @@
 class Wiki extends React.Component {
   initialWikiState = {
     loading: true, 
-    searchTerm: '',
-    searchData: [],
+    searchResults: [],
     showVirtualKeyboard: false,
     focussedInput: null,
     // negative number indicates a new entry
@@ -12,7 +11,12 @@ class Wiki extends React.Component {
     editMode: true
   };
 
-  data = {};
+  /*
+   * Not kept in the state because these are intermediary variables from which searchResults in the state is calculated
+   * The state triggers a re-render and the rendered html us based on the searchResults, not the searchTerm or searchData
+   */
+  searchTerm = '';
+  searchData = [];
 
   constructor(props) {
     super(props);
@@ -25,27 +29,68 @@ class Wiki extends React.Component {
       this.setSearchData(data);
       this.setState({loading: false});
     }, error: () => {
-      this.setSearchData({});
+      this.setSearchData([]);
     }});
   }
 
+  /**
+   * When the searchData changes, recalculate the searchResults in the state based on searchData and searchTerm
+   * Because searchResults is in the state, it's change will trigger a re-render
+   */
   setSearchData = (searchData) => {
-    this.setState({searchData});
+    this.searchData = searchData;
+    this.search();
   }
 
   search = () => {
-    const searchterm = $('[data-name=search]').val();
-    // TODO: actually search
-    if(searchterm && searchterm.length > 0) {
-      this.setState({searchResults: this.searchData});
+    /*
+     * Search using the searchTerm
+     */
+    if (this.searchTerm && this.searchTerm.length > 0) {
+      var fuseOptions = {
+        shouldSort: true,
+        threshold: 0.4,
+        location: 0,
+        distance: 1000,
+        minMatchCharLength: 1,
+        keys: [{
+            name: "title",
+            weight: 0.3
+          },{
+            name: "tags",
+            weight: 0.2
+          }, {
+            name: "source",
+            weight: 0.1
+          }, {
+            name: "details",
+            weight: 0.1
+          }, {
+            name: "examples",
+            weight: 0.2
+          }
+        ]
+      };
+      var fuse = new Fuse(this.searchData, fuseOptions);
+      const searchResults = fuse.search(this.searchTerm);
+      var selectedId = this.state.selectedId;
+      
+      if (searchResults.length === 0) { // If no results, show new editor
+        this.setState({searchResults, selectedId: -1, editMode: true});
+      } else if (searchResults.find((entry) => entry.id === selectedId) === undefined) { // If the currently selected entry is no longer available, use first search result
+        this.setState({searchResults, selectedId: searchResults[0].id, editMode: false});
+      } else {
+        this.setState({searchResults});
+      }
     } else {
-      // Reset searchResults to contain everything
+      // If search field is empty, show everything
       this.setState({searchResults: this.searchData});
     }
   }
 
   onSearchTermChange = (searchTerm) => {
-    this.setState({searchTerm});
+    this.searchTerm = searchTerm;
+    this.search();
   }
 
   clearSearch = () => {
@@ -78,7 +123,7 @@ class Wiki extends React.Component {
   updateEntry = (updatedEntry) => {
     var newData = [];
     var foundEntry = false;
-    this.state.searchData.map(entry => {
+    this.searchData.map(entry => {
       if (entry.id === updatedEntry.id) {
         newData.push(updatedEntry);
         foundEntry = true;
@@ -119,10 +164,9 @@ class Wiki extends React.Component {
     if (this.state.loading) {
       return 'loading...';
     } else {
-      const searchResults = this.state.searchData;
       var selectedEntry;
       if (this.state.selectedId >= 0) {
-        selectedEntry = searchResults.find((entry) => entry.id === this.state.selectedId);
+        selectedEntry = this.state.searchResults.find((entry) => entry.id === this.state.selectedId);
       } else {
         selectedEntry = {
           id: Date.now(),
@@ -140,7 +184,7 @@ class Wiki extends React.Component {
       }
       return  <div id="grid">
                 <div id='previews'>
-                  {searchResults.map((entry) => {
+                  {this.state.searchResults.map((entry) => {
                     return <Preview entry={entry} key={entry.id}
                                     isSelected={this.state.selectedId === entry.id} 
                                     onClick={() => this.selectEntry(entry.id)} />
@@ -237,7 +281,7 @@ class View extends React.Component {
                 <legend>Tags</legend>
                 {
                   this.props.editMode
-                  ? <TextArea name='tags' value={this.props.entry.tags}
+                  ? <TextArea name='tags' value={this.props.entry.tags} rows='3'
                               virtualKeyboard={this.props.virtualKeyboard} />
                   : this.props.entry.tags ? this.props.entry.tags.split('\n').map((tag) => `#${tag} `) : undefined
                 }
@@ -255,7 +299,7 @@ class View extends React.Component {
                 <legend>Details</legend>
                 {
                   this.props.editMode
-                  ? <TextArea name='details' value={this.props.entry.details}
+                  ? <TextArea name='details' value={this.props.entry.details} rows='7'
                               virtualKeyboard={this.props.virtualKeyboard} />
                   : this.props.entry.details
                 }
@@ -264,7 +308,7 @@ class View extends React.Component {
                 <legend>Examples</legend>
                 {
                   this.props.editMode
-                  ? <TextArea name='examples' value={this.props.entry.examples}
+                  ? <TextArea name='examples' value={this.props.entry.examples} rows ='7'
                               virtualKeyboard={this.props.virtualKeyboard} />
                   : this.props.entry.examples ? this.props.entry.examples.split('\n').map((line, index) => <div key={index}>{line}&nbsp;</div>) : undefined
                 }
@@ -319,7 +363,7 @@ class TextArea extends InputField {
   render() {
     return <textarea defaultValue={this.props.value}
                      data-name={this.props.name}
-                     rows='3'
+                     rows={this.props.rows}
                      id={this.props.virtualKeyboard.show && this.props.virtualKeyboard.focussedInput === this.props.name ? 'hangul-input': undefined}
                      onFocus={this.onFocus} />
   }

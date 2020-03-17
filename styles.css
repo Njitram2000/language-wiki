@@ -68,7 +68,6 @@
 #previews {
   width: 20em;
   border-right: solid black 1px;
-  height: 100vh;
   padding-right: 1em;
 }
 #previews .preview {
