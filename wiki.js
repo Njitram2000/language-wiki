@@ -301,7 +301,7 @@ class View extends React.Component {
                   this.props.editMode
                   ? <TextArea name='details' value={this.props.entry.details} rows='7'
                               virtualKeyboard={this.props.virtualKeyboard} />
-                  : this.props.entry.details
+                  : this.props.entry.details ? this.props.entry.details.split('\n').map((line, index) => <div key={index}>{line}&nbsp;</div>) : undefined
                 }
               </fieldset>
               <fieldset>
