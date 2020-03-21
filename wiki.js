@@ -141,15 +141,17 @@ class Wiki extends React.Component {
   }
 
   deleteEntry = (id) => {
-    var newData = [];
-    this.searchData.map(entry => {
-      if (entry.id !== id) {
-        newData.push(entry)
-      }
-    });
-    this.writeDataFile(newData);
-    this.setSearchData(newData);
-    this.setState({selectedId: -1, editMode: true});
+    if(confirm("Delete?")) {
+      var newData = [];
+      this.searchData.map(entry => {
+        if (entry.id !== id) {
+          newData.push(entry)
+        }
+      });
+      this.writeDataFile(newData);
+      this.setSearchData(newData);
+      this.setState({selectedId: -1, editMode: true});
+    }
   }
 
   writeDataFile(newData) {
@@ -182,45 +184,51 @@ class Wiki extends React.Component {
         focussedInput: this.state.focussedInput,
         setFocussedInput: this.setFocussedInput
       }
-      return  <div id="grid" onKeyUp={(e) => {if(e.ctrlKey && e.key === '<') { e.preventDefault(); this.toggleVirtualKeyboard()}}}>
-                <div id='previews'>
-                  {this.state.searchResults.map((entry) => {
-                    return <Preview entry={entry} key={entry.id}
-                                    isSelected={this.state.selectedId === entry.id} 
-                                    onClick={() => this.selectEntry(entry.id)} />
-                  })}
-                </div>
-                <div id="right-grid">
-                  <div id='search'>
-                    <SearchField type='text' name='search'
-                                virtualKeyboard={virtualKeyboard}
-                                onSearchTermChange={this.onSearchTermChange}/>
-                    <span onClick={this.clearSearch}><i className="clearSearch far fa-times-circle"></i></span>
-                    <img className={this.state.showVirtualKeyboard ? 'korea active' : 'korea' } src="korea.png" onClick={this.toggleVirtualKeyboard} />
-                    <span onClick={(e) => {
-                        e.preventDefault();
-                        this.setState({editMode: true, selectedId: -1});
-                        $('form#view')[0].reset();
-                    }}>
-                      <i className='new far fa-plus-square'></i>
+      return  <div>
+                <div id='search'>
+                  <SearchField type='text' name='search'
+                              virtualKeyboard={virtualKeyboard}
+                              onSearchTermChange={this.onSearchTermChange}
+                              clearSearch={this.clearSearch}/>
+                  <div id="buttons">
+                    <span className='buttons-wrapper'>
+                      <img className={this.state.showVirtualKeyboard ? 'korea active' : 'korea' } src="korea.png" onClick={this.toggleVirtualKeyboard} />
+                      <span onClick={(e) => {
+                          e.preventDefault();
+                          this.setState({editMode: true, selectedId: -1});
+                          $('form#view')[0].reset();
+                      }}>
+                        <i className='new far fa-plus-square'></i>
+                      </span>
+                      {
+                        this.state.selectedId >= 0
+                        ? <span onClick={(e) => { e.preventDefault(); this.setState((state) => ({editMode: !state.editMode})) }}>
+                            <i className='edit fas fa-pencil-alt'></i>
+                          </span>
+                        : undefined
+                      }
+                      {
+                        this.state.selectedId >= 0
+                        ? <span onClick={(e) => { e.preventDefault(); this.deleteEntry(this.state.selectedId);}}>
+                            <i className='delete fas fa-trash-alt'></i>
+                          </span>
+                        : undefined
+                      }
                     </span>
-                    {
-                      this.state.selectedId >= 0
-                      ? <span onClick={(e) => { e.preventDefault(); this.setState((state) => ({editMode: !state.editMode})) }}>
-                          <i className='edit fas fa-pencil-alt'></i>
-                        </span>
-                      : undefined
-                    }
-                    {
-                      this.state.selectedId >= 0
-                      ? <span onClick={(e) => { e.preventDefault(); this.deleteEntry(this.state.selectedId);}}>
-                          <i className='delete fas fa-trash-alt'></i>
-                        </span>
-                      : undefined
-                    }
                   </div>
-                  <View entry={selectedEntry} editMode={this.state.editMode} virtualKeyboard={virtualKeyboard} updateEntry={this.updateEntry} />
-                  <HangulKeyboard show={this.state.showVirtualKeyboard && this.state.focussedInput !== null} />
+                </div>
+                <div id="grid" onKeyUp={(e) => {if(e.ctrlKey && e.key === '<') { e.preventDefault(); this.toggleVirtualKeyboard()}}}>
+                  <div id='previews'>
+                    {this.state.searchResults.map((entry) => {
+                      return <Preview entry={entry} key={entry.id}
+                                      isSelected={this.state.selectedId === entry.id} 
+                                      onClick={() => this.selectEntry(entry.id)} />
+                    })}
+                  </div>
+                  <div id="right-grid">
+                    <View entry={selectedEntry} editMode={this.state.editMode} virtualKeyboard={virtualKeyboard} updateEntry={this.updateEntry} />
+                    <HangulKeyboard show={this.state.showVirtualKeyboard && this.state.focussedInput !== null} />
+                  </div>
                 </div>
               </div>;
     }
@@ -351,11 +359,14 @@ class SearchField extends InputField {
   }
 
   render() {
-    return <input type={this.props.type}
-                  defaultValue={this.props.value}
-                  data-name={this.props.name}
-                  id={this.props.virtualKeyboard.show && this.props.virtualKeyboard.focussedInput === this.props.name ? 'hangul-input': undefined}
-                  onFocus={this.onFocus} onKeyUp={(e) => {this.props.onSearchTermChange(e.target.value)}}/>
+    return  <span className='searchfield'>
+              <input type={this.props.type}
+                    defaultValue={this.props.value}
+                    data-name={this.props.name}
+                    id={this.props.virtualKeyboard.show && this.props.virtualKeyboard.focussedInput === this.props.name ? 'hangul-input': undefined}
+                    onFocus={this.onFocus} onKeyUp={(e) => {this.props.onSearchTermChange(e.target.value)}}/>
+              <span onClick={this.props.clearSearch}><i className="clearSearch far fa-times-circle"></i></span>
+            </span>;
   }
 }
 
