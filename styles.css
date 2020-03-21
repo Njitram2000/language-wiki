@@ -177,9 +177,13 @@ legend {
     overflow: scroll;
   }
   #previews .preview {
-    border: none;
-    padding: 0 0.5em 0.5em 0;
-    min-width: 15em;
+    border-bottom: none;
+    border-right: solid black 1px;
+    padding: 0 0.5em 0.5em 0.5em;
+    max-width: 15em;
+  }
+  #previews .preview:last-of-type {
+    border-right: none;
   }
   #previews .preview.selected {
     font-weight: bold;
