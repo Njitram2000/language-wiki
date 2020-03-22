@@ -217,7 +217,7 @@ class Wiki extends React.Component {
                     </span>
                   </div>
                 </div>
-                <div id="grid" onKeyUp={(e) => {if(e.ctrlKey && e.key === '<') { e.preventDefault(); this.toggleVirtualKeyboard()}}}>
+                <div id="grid">
                   <div id='previews'>
                     {this.state.searchResults.map((entry) => {
                       return <Preview entry={entry} key={entry.id}
