@@ -186,6 +186,12 @@ legend {
     border-right: none;
   }
   #previews .preview.selected {
+    border-radius: 0;
+  }
+  #previews .preview:last-of-type {
+    border-right: none;
+  }
+  #previews .preview.selected {
     font-weight: bold;
     box-shadow: none;
   }
