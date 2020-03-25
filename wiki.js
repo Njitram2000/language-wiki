@@ -289,7 +289,7 @@ class View extends React.Component {
                 <legend>Tags</legend>
                 {
                   this.props.editMode
-                  ? <TextArea name='tags' value={this.props.entry.tags} rows='3'
+                  ? <TextArea name='tags' value={this.props.entry.tags} defaultRows='3'
                               virtualKeyboard={this.props.virtualKeyboard} />
                   : this.props.entry.tags ? this.props.entry.tags.split('\n').map((tag) => `#${tag} `) : undefined
                 }
@@ -307,7 +307,7 @@ class View extends React.Component {
                 <legend>Details</legend>
                 {
                   this.props.editMode
-                  ? <TextArea name='details' value={this.props.entry.details} rows='7'
+                  ? <TextArea name='details' value={this.props.entry.details} defaultRows='3'
                               virtualKeyboard={this.props.virtualKeyboard} />
                   : this.props.entry.details ? this.props.entry.details.split('\n').map((line, index) => <div key={index}>{line}&nbsp;</div>) : undefined
                 }
@@ -316,7 +316,7 @@ class View extends React.Component {
                 <legend>Examples</legend>
                 {
                   this.props.editMode
-                  ? <TextArea name='examples' value={this.props.entry.examples} rows ='7'
+                  ? <TextArea name='examples' value={this.props.entry.examples} defaultRows='3'
                               virtualKeyboard={this.props.virtualKeyboard} />
                   : this.props.entry.examples ? this.props.entry.examples.split('\n').map((line, index) => <div key={index}>{line}&nbsp;</div>) : undefined
                 }
@@ -371,12 +371,39 @@ class SearchField extends InputField {
 }
 
 class TextArea extends InputField {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rows: props.defaultRows
+    };
+  }
+
+  calculateRows() {
+    const textArea = $(`textarea[data-name=${this.props.name}]`)[0];
+    const lineHeight = Math.floor(window.getComputedStyle(textArea).getPropertyValue('font-size').replace('px','') * 1.2);
+    const scrollHeight = textArea.scrollHeight;
+    var rows = (scrollHeight/lineHeight);
+    if(this.props.defaultRows > rows) {
+      rows = this.props.defaultRows;
+    }
+    this.setState({rows});
+  }
+
+  componentDidMount() {
+    this.calculateRows();
+  }
+
+  onKeyUp = () => {
+    this.calculateRows();
+  }
+
   render() {
-    return <textarea defaultValue={this.props.value}
-                     data-name={this.props.name}
-                     rows={this.props.rows}
-                     id={this.props.virtualKeyboard.show && this.props.virtualKeyboard.focussedInput === this.props.name ? 'hangul-input': undefined}
-                     onFocus={this.onFocus} />
+    return  <textarea defaultValue={this.props.value}
+                      data-name={this.props.name}
+                      rows={this.state.rows}
+                      id={this.props.virtualKeyboard.show && this.props.virtualKeyboard.focussedInput === this.props.name ? 'hangul-input': undefined}
+                      onFocus={this.onFocus}
+                      onKeyUp={this.onKeyUp} />
   }
 }
 

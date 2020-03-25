@@ -25,7 +25,7 @@ The korean flag toggles the Hangul keyboard. The keyboard will only show when a 
 
 Note that each "tag" is on a new line and the hashtag does **not** need to be typed.
 
-##Techical details
+## Techical details
 The goal was to make a quick and simple app with as little non-browser functionality as possible. The nodejs server was unavoidable as modern browsers cannot read/write json from local files.
 These are the files:
 - `app.js` is the expressjs server
