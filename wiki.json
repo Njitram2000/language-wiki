@@ -26,9 +26,97 @@
   {
     "id": 1584472795256,
     "title": "Let's -아/-어/-여 | -(으)시죠 | -자 | -(으)ㄹ래요 | -(으)실래요",
-    "tags": "conjugation\nverb",
+    "tags": "Verb conjugated\nVerb stem",
     "source": "TTMIK Level 3 Lesson 16 p105",
     "details": "\"Let's\" (do something)\n-아/-어/-여 [polite/pain] -> exact same as normal conjugation\n-(으)시죠 [honorific]\n-자 [informal]\n-(으)ㄹ래요 [polite/casual]\n-(으)실래요 [polite/formal]",
     "examples": "시작해요\n시작하시죠 [honorific]\n시작하자 [informal]\n시작할래요 [polite/casual]\n시작하실래요 [polite/formal]"
+  },
+  {
+    "id": 1584559436793,
+    "title": "-게",
+    "tags": "particle",
+    "source": "Naver dictionary",
+    "details": "A connective ending used when the preceding statement is the purpose, result, method, amount, etc., of something mentioned in the following statement.",
+    "examples": ""
+  },
+  {
+    "id": 1584560389253,
+    "title": "-(으)ㄴ 다음에 / 후에 / 뒤에 (After...some verb)",
+    "tags": "after\nadjective\nverb stem",
+    "source": "TTMIK Level 3 Lesson 19 p120",
+    "details": "Turns a verb into a adjective and indicates that what follows will occur after the action that is being conjugated.\n다음 = next\n후 = after\n뒤 = behind/back\n에 means \"at\" so combined they mean \"at\" the location in time \"after\" what is being described\nAll 3 can be used interchangeably in this form\n\nJust like with other verbs turned into an adjective, the tense of the first verb is determined by the tens of the second verb (because only the second is conjugated)",
+    "examples": "집에 간 후에 책을 읽었어요\nAfter I went home, I read a book."
+  },
+  {
+    "id": 1584813880633,
+    "title": "그래도 / -아/어/여도",
+    "tags": "Conjunction\nParticle\nVerb conjugated",
+    "source": "TTMIK Level 3 Lesson 12/20 p83/125",
+    "details": "그래 = 그렇게 헤 or 그렇게 하여\n    = To do in such a way, to do that. Used by itself to agree with something.\n-도 = also, even, too\nSo, 그래도 means nevertheless, even if, however, but still.\nIt is a sentence starter.\n\n-아/어/여도 after a verb has the  exact same meaning. Just like with -고, the verb followed by -도 does not have a tense but instead inherits its tense from the verb conjugated in the part of the sentence that follows.",
+    "examples": "비가 와요. 그래도 갈 거예요?\nIt's raining. Are you still going (despite that)?\n\n비가 와도 갈 거예요?\nEven though it's raining, are you still going?\nAre you going, even though it's raining?\n\n바빠도 한 한국에 갈 거예요\nEven if I'm busy, I will go to Korea."
+  },
+  {
+    "id": 1584907707727,
+    "title": "-의 (of)",
+    "tags": "Particle",
+    "source": "TTMIK Youtube",
+    "details": "The english word \"of\" in the posessive sense. If the phrase cannot be rewriten using 's, it is not possessive and so not 의.\n\nUsed as suffix to word that is is a description of, followed by the description.\n\nSometimes pronouced as 에",
+    "examples": "내 친구의 이름\nMy friend's name\nThe name of my friend\n\nNOT this type of \"of\" (just use the counter instead)\nOne of my friends\n제 친구 한 명\nA piece if cake\n케니크 한 조각"
+  },
+  {
+    "id": 1584908439970,
+    "title": "A glass/cup of. A drink",
+    "tags": "Counter",
+    "source": "Naver",
+    "details": "Counter for a drink, specifying a cup/glass or similar",
+    "examples": "우유 한잔\nA glass of milk\n커피 한잔\nA cup of coffee\n물 한잔\nA glass of water"
+  },
+  {
+    "id": 1584989018872,
+    "title": "거 / 것 (thing)",
+    "tags": "",
+    "source": "TTMIK",
+    "details": "Thing. While 것 is the correct spelling, 거 is very common both spoken and written because it's more smooth to say.\n\nOften combined with other parts of grammar as a sort of glue and very loosely means \"thing\"",
+    "examples": "이거 / 저거 / 그거\nThis thing / that thing / the thing (that was mentioned. Normally \"that\" in English)\n\n갈 거예요\nI will be going / Going is the \"thing\" I will be in the future\n\n산 거 봐요\nLook at what I bought / \"The buying\", look at it. The verb becomes a noun, a thing"
+  },
+  {
+    "id": 1584989630890,
+    "title": "-는 것 (Verbs into nouns)",
+    "tags": "Verb stem\nNoun",
+    "source": "TTMIK Level 2 Lesson 19 p114",
+    "details": "Turn a verb into a noun to make it part of the middle of the sentence. A sentence can only end in a real verb (or connected with -고 -서 etc).\n\n-은/ㄴ = past tense\n-는 = present tense\n-을/ㄹ = future tense",
+    "examples": "산 것 봐요\nLook at what I bought\n사는 거 봐요\nLook at what I'm buying\n살 거 봐요\nLook at what I will buy"
+  },
+  {
+    "id": 1584990144926,
+    "title": "-(으)ㄹ까 (I wonder / Shall we?)",
+    "tags": "Particle",
+    "source": "TTMIK Level 3 Lesson 4 p27",
+    "details": "Turns the whole sentence into a question, wondering if something is a certain way or if someone wants to do something.",
+    "examples": "먹을까요\nShall we eat? Do you want to eat?\n언제 사랑이 올까\nWhen will love come? / I wonder when love will come"
+  },
+  {
+    "id": 1585158905007,
+    "title": "-는/은/ㄴ데 (linking verbs)",
+    "tags": "Verb stem\nParticle",
+    "source": "TTMIK Level 3 Lesson 21 p134",
+    "details": "1) 는데 after action verbs, 있다, 없다, -았 or -겠\n2) 은데 after descriptive verbs with final consonant in verb stem\n3) ㄴ데 after descriptive verbs with final vowel or ㄹ (in this case ㄹ is dropped) and after 이다 and 아니다\n\n--------\nUsage\n--------\n1) First half of the sentence (ending in 데) explains or puts the second part into context or contrasts the 2 parts\n\n2) Showing surprise or exclamation\n\n3) Asking a question, expecting an explanation\n\n4) Suggesting that you expect an answer or reponse (similar to trailing off in English with so...)",
+    "examples": "하다 하는데\n먹다 먹는데 (Mongneunde)\n작다 작은데 (Small)\n예쁘다 예쁜데\n멀다 먼데 (Far)"
+  },
+  {
+    "id": 1585506264079,
+    "title": "Descriptive verb + -ㄴ/은 (adjectives)",
+    "tags": "Adjective\nVerb stem\nVerb conjugated",
+    "source": "TTMIK Level 3 Lesson 13 p88",
+    "details": "Adjectives and verbs both have the same dictionary form, ending in -다\nEg. 가다 (to go) and 바쁘다 (to be busy)\nVerbs are actually split into:\n+ Action verbs (\"normal\" verbs)\n+ Descriptive verbs (adjectives)\n\nAdjectives can be used as a verb, by congugating the stem with 아/어/여 or as actual adjectives by adding ㄴ/은\nEg 저는 바빠요 (I am busy) or 바쁜 사람 (a busy person)\n\nNote that -이에요 is used for verbs, not adjectives. I am busy is NOT 저는 바쁜이에요.\n",
+    "examples": ""
+  },
+  {
+    "id": 1585507175665,
+    "title": "Action verb + -는 (adjective)",
+    "tags": "Adjective\nVerb stem\nVerb conjugated",
+    "source": "TTMIK Level 3 Lesson 14 p94",
+    "details": "See the explanation for descriptive verb adjectives.\n\nAction verbs become adjectives by adding -는 to the verb stem.\n**If the verb stem ends in ㄹ, the ㄹ is dropped**\nEg. 열다 -> 여는 (to open)",
+    "examples": "노래하는 사람\nSinging person\n\n좋아하는 사람\nliked person (a person that I like)\nNOT \"person that likes\" -> It describes the person, not what the person does."
   }
 ]
