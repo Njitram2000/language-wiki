@@ -98,9 +98,9 @@
   {
     "id": 1585158905007,
     "title": "-는/은/ㄴ데 (linking verbs)",
-    "tags": "Verb stem\nParticle",
+    "tags": "Verb stem\nAdjective\nParticle",
     "source": "TTMIK Level 3 Lesson 21 p134",
-    "details": "1) 는데 after action verbs, 있다, 없다, -았 or -겠\n2) 은데 after descriptive verbs with final consonant in verb stem\n3) ㄴ데 after descriptive verbs with final vowel or ㄹ (in this case ㄹ is dropped) and after 이다 and 아니다\n\n--------\nUsage\n--------\n1) First half of the sentence (ending in 데) explains or puts the second part into context or contrasts the 2 parts\n\n2) Showing surprise or exclamation\n\n3) Asking a question, expecting an explanation\n\n4) Suggesting that you expect an answer or reponse (similar to trailing off in English with so...)",
+    "details": "1) 는데 after action verbs, 있다, 없다, -았 or -겠\n2) 은데 after descriptive verbs with final consonant in verb stem\n3) ㄴ데 after descriptive verbs with final vowel or ㄹ (in this case ㄹ is dropped) and after 이다 and 아니다\n\n--------\nUsage\n--------\n1) First half of the sentence (ending in 데) explains or puts the second part into context or contrasts the 2 parts.\nIt means and or and is similar to a semi-colon\n\n2) Showing surprise or exclamation\n\n3) Asking a question, expecting an explanation\n\n4) Suggesting that you expect an answer or reponse (similar to trailing off in English with so...)",
     "examples": "하다 하는데\n먹다 먹는데 (Mongneunde)\n작다 작은데 (Small)\n예쁘다 예쁜데\n멀다 먼데 (Far)"
   },
   {
@@ -118,5 +118,29 @@
     "source": "TTMIK Level 3 Lesson 14 p94",
     "details": "See the explanation for descriptive verb adjectives.\n\nAction verbs become adjectives by adding -는 to the verb stem.\n**If the verb stem ends in ㄹ, the ㄹ is dropped**\nEg. 열다 -> 여는 (to open)",
     "examples": "노래하는 사람\nSinging person\n\n좋아하는 사람\nliked person (a person that I like)\nNOT \"person that likes\" -> It describes the person, not what the person does."
+  },
+  {
+    "id": 1586023381066,
+    "title": "Can / cannot | might/maybe/perhaps",
+    "tags": "Verb stem\nConjugation",
+    "source": "TTMIK Level 2 Lesson 17 p103 & Level 3 Lesson 22 p141",
+    "details": "Can do something\n-(으)ㄹ 수 있다\nCannot do something\n-(으)ㄹ 수 없다\n\nUsing ㄹ indicates future tense.\n수 = Way/method/idea\nSo there will be a way, therefor it CAN be (but isn't yet, so future)\n\nMaybe/might/perhaps\n-(으)ㄹ 수도 있다\nThere will also be a way/one of the ways -> one of these ways might happen\n\nNOTE that for negative, the modifier is added before 수도 but 있다 does NOT become 없다",
+    "examples": "읽을 수 있어(I can read)\n잘 수 없어서 (couldn't sleep)\n한국어 할 있어요 (I can speak Korean)\n\n저 내일 올 수도 있어요\nI might come here tomorrow\n\n저 내일 안 올 수도 있어요\nI might not come here tomorrow\n\n저 내일 못 올 수도 있어요\nI might not be able to come here tomorrow"
+  },
+  {
+    "id": 1586026107891,
+    "title": "To be good/bad/unable",
+    "tags": "Verb",
+    "source": "TTMIK Level 2 Lesson 18 p108",
+    "details": "To be good at: 잘 (good)\nTo be unable to: 못 (not)\nTo be bad at: 잘 못 (good not)\nTo do in the wrong way: 잘못\nTo make a mistake: 잘못하다\n\nThere are 2 ways to use these:\n1) With 하다 verbs, the noun of the verb becomes the object (을/를) and 잘/못/etc is placed in between:\nEg. 공부를 못해요 (I cannot study)\n2) With all other verbs, 잘/못/etc is simply placed in front of the verb with a space\nEg. 잘 도왖줘 (I'm good at helping)\n\nIMPORTANT\nSpaces (pauses) make a difference:\n1) Good/bad with 하다: always without space (잘하다 / 못하다) (ja-ra-da / mo-ta-da)\n2) Good/bad with other verbs: always with space (잘하 ...다 / 못 ...다) (jal verb / mot verb)\n3) Space between 잘 and 못 and verb: to be bad at\n공불 잘 못 해 (I'm bad at studying)\n4) To do the wrong way: 잘못 해 (jal-mot hae)\n5) To make a mistake. 잘못해 (jal-mo-tae)",
+    "examples": ""
+  },
+  {
+    "id": 1586105987452,
+    "title": "이다 (to be)",
+    "tags": "Verb\nparticle",
+    "source": "",
+    "details": "Verb used as particle for nouns.\nBecomes -이에요 or -예요 depending on whether the noun ends in a vowel or consonant.\n\nThe verb stem is 이 which means that when conjugated to become a noun itself, it becomes -인.\nEg. It's my birthday\n오늘 생일이에 (Normal)\n오늘 생일인대! (Exclamation)",
+    "examples": ""
   }
 ]
