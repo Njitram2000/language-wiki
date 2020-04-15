@@ -371,36 +371,43 @@ class SearchField extends InputField {
 }
 
 class TextArea extends InputField {
+  minHeight = 0;
+
   constructor(props) {
     super(props);
     this.state = {
-      rows: props.defaultRows
+      rows: props.defaultRows,
+      height: '0px'
     };
   }
 
-  calculateRows() {
+  // Source: http://bdadam.com/blog/automatically-adapting-the-height-textarea.html
+  calculateHeight() {
     const textArea = $(`textarea[data-name=${this.props.name}]`)[0];
-    const lineHeight = Math.floor(window.getComputedStyle(textArea).getPropertyValue('font-size').replace('px','') * 1.2);
-    const scrollHeight = textArea.scrollHeight;
-    var rows = (scrollHeight/lineHeight);
-    if(this.props.defaultRows > rows) {
-      rows = this.props.defaultRows;
-    }
-    this.setState({rows});
+    // compute the height difference which is caused by border and outline
+    var outerHeight = parseInt(window.getComputedStyle(textArea).height, 10);
+    var diff = outerHeight - textArea.clientHeight;
+
+    // set the correct height
+    // textArea.scrollHeight is the full height of the content, not just the visible part
+    this.setState({height: Math.max(this.minHeight, textArea.scrollHeight + diff) + 'px'});
   }
 
   componentDidMount() {
-    this.calculateRows();
+    const textArea = $(`textarea[data-name=${this.props.name}]`)[0];
+    const lineHeight = Math.floor(window.getComputedStyle(textArea).getPropertyValue('font-size').replace('px','') * 1.2);
+    this.minHeight = this.props.defaultRows * lineHeight;
+    this.calculateHeight();
   }
 
   onKeyUp = () => {
-    this.calculateRows();
+    this.calculateHeight();
   }
 
   render() {
     return  <textarea defaultValue={this.props.value}
                       data-name={this.props.name}
-                      rows={this.state.rows}
+                      style={{height: this.state.height}}
                       id={this.props.virtualKeyboard.show && this.props.virtualKeyboard.focussedInput === this.props.name ? 'hangul-input': undefined}
                       onFocus={this.onFocus}
                       onKeyUp={this.onKeyUp} />
