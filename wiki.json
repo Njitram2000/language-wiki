@@ -100,8 +100,8 @@
     "title": "-는/은/ㄴ데 (linking verbs)",
     "tags": "Verb stem\nAdjective\nParticle",
     "source": "TTMIK Level 3 Lesson 21 p134",
-    "details": "1) 는데 after action verbs, 있다, 없다, -았 or -겠\n2) 은데 after descriptive verbs with final consonant in verb stem\n3) ㄴ데 after descriptive verbs with final vowel or ㄹ (in this case ㄹ is dropped) and after 이다 and 아니다\n\n--------\nUsage\n--------\n1) First half of the sentence (ending in 데) explains or puts the second part into context or contrasts the 2 parts.\nIt means and or and is similar to a semi-colon\n\n2) Showing surprise or exclamation\n\n3) Asking a question, expecting an explanation\n\n4) Suggesting that you expect an answer or reponse (similar to trailing off in English with so...)",
-    "examples": "하다 하는데\n먹다 먹는데 (Mongneunde)\n작다 작은데 (Small)\n예쁘다 예쁜데\n멀다 먼데 (Far)"
+    "details": "1) 는데 after action verbs\n2) 은데 after descriptive verbs with final consonant in verb stem\n3) ㄴ데 after descriptive verbs with final vowel\nEnds in ㄹ or ㅎ) Drop the ㄹ/ㅎ\nEnds in ㅂ) drop the ㅂ and add 우, then the normal rules\n\nNote that all of these use 는데, even if they end in a vowel:\n이다, 아니다, 있다, 없다, -았 or -겠\n\nAbove is present tense.\nPast tense: take verbstem and add 는데\nEg. 했다 (To do) -> 했는데\nFuture tense: same\n할거다 (to do) -> 할건데\n\n--------\nUsage\n--------\n1) First half of the sentence (ending in 데) explains or puts the second part into context or contrasts the 2 parts.\nIt means and/or and is similar to a semi-colon. It is used to contrast 2 sentences and sounds softer than 고 or 지만\n\n2) Showing surprise or exclamation\n\n3) Asking a question, expecting an explanation\n\n4) Suggesting that you expect an answer or reponse (similar to trailing off in English with so...)",
+    "examples": "하다 하는데\n먹다 먹는데 (Mongneunde)\n작다 작은데 (Small)\n예쁘다 예쁜데\n멀다 먼데 (Far)\n\n살다 (To live) -> 사는데\n맵다 (To be spicy) -> 매운데"
   },
   {
     "id": 1585506264079,
@@ -141,6 +141,126 @@
     "tags": "Verb\nparticle",
     "source": "",
     "details": "Verb used as particle for nouns.\nBecomes -이에요 or -예요 depending on whether the noun ends in a vowel or consonant.\n\nThe verb stem is 이 which means that when conjugated to become a noun itself, it becomes -인.\nEg. It's my birthday\n오늘 생일이에 (Normal)\n오늘 생일인대! (Exclamation)",
+    "examples": ""
+  },
+  {
+    "id": 1587317096186,
+    "title": "Plural -들",
+    "tags": "Noun",
+    "source": "Naver",
+    "details": "-들 is used for plural of a noun",
+    "examples": "친구들\nFriends\n학샹들\nStudents"
+  },
+  {
+    "id": 1588439291499,
+    "title": "-네요 (impressed/surprised)",
+    "tags": "Verb stem",
+    "source": "TTMIK Level3 lesson 25 p156",
+    "details": "Verb stem + -네요\nExpresses being impressed, surprised or a personal thought",
+    "examples": "크다 - To be big\n커요\n크네요\n\n맞다 To be correct\n맞아 (Maja)\n맛네 (Mannae)"
+  },
+  {
+    "id": 1588494157172,
+    "title": "-만",
+    "tags": "noun",
+    "source": "Naver https://en.dict.naver.com/#/entry/koen/6826e070cc3f4eb49ed11c574d596d97",
+    "details": "1.only; alone; just; merely; as many as; as far as.\n2.at least.\n\nSuffix for nouns but also verbs that are turned into nouns",
+    "examples": "너에게만\nOnly to you\n\n보이지만\n\n조금만\nOnly a little\n\n보는 것만\nOnly what can be seen"
+  },
+  {
+    "id": 1589133580150,
+    "title": "아/어/여서 (therefore/so)",
+    "tags": "Conjugated verb",
+    "source": "TTMIK Level 3 Lesson 7 p46",
+    "details": "Links sentences together.",
+    "examples": "비가 와서 못 가요\nIt's raining so I can't go\n비가 와서 못 갔어요\nIt rained, so I couldn't go\n"
+  },
+  {
+    "id": 1593631587305,
+    "title": "Honerific suffix -시다",
+    "tags": "Suffix verb conjugated",
+    "source": "https://www.italki.com/question/504772",
+    "details": "Added to make the sentence more polite.\n-시다\n-셔요 -> -세요\nhttps://www.howtostudykorean.com/unit-2-lower-intermediate-korean-grammar/unit-2-lessons-34-41/lesson-39/",
+    "examples": "안녕하세요\n왜 예쁜 날 두고 가시나"
+  },
+  {
+    "id": 1593631740901,
+    "title": "Question to oneself suffix -나",
+    "tags": "Suffix",
+    "source": "https://www.italki.com/question/504772",
+    "details": "Suffix used when asking a question that is more directed to oneself\nNot quite the same as -카 which is to wonder about something.",
+    "examples": "왜 예쁜 날 두고 가시나"
+  },
+  {
+    "id": 1593631859116,
+    "title": "Leave behind 두고 가",
+    "tags": "Verb",
+    "source": "",
+    "details": "두다 is to put or place\n가다 Is to go\n두고 가 is to leave behind",
+    "examples": "왜 예쁜 날 두고 가시나"
+  },
+  {
+    "id": 1596478243999,
+    "title": "차라라 (rather, preferrably)",
+    "tags": "Conjunction",
+    "source": "Billy Korean live",
+    "details": "",
+    "examples": ""
+  },
+  {
+    "id": 1597084434519,
+    "title": "-지 /죠 (question confirmation)",
+    "tags": "Verb stem",
+    "source": "Billie",
+    "details": "..eh?\n...right?\n...isn't it?",
+    "examples": "맛있지 / 맛있죠 ?\nIt's delicious, right?"
+  },
+  {
+    "id": 1597085855509,
+    "title": "군(요) realising (didn't know that)",
+    "tags": "Verb stem",
+    "source": "Billie",
+    "details": "If used with action verb:\n-는군요\nEg. 공부하는군요\nOh, I didn't realise you were studying\n\n-구나 -> a little more emphasis and only casual",
+    "examples": "맛있군요\nOh, that's actually delicious\n\nMost common:\n그렇군요 -> 그렇다 to be a certain way\nOh, I didn't know that (it was that way)"
+  },
+  {
+    "id": 1597086386802,
+    "title": "-거든(요) FYI, just so you know, hey....",
+    "tags": "Verb stem",
+    "source": "",
+    "details": "Informing, you think they don't know.\nIntonation:\n* Rising: on 든 or 요 but not all of 든요. Mocking or condescending (rude) Very common among friends\n* Falling: neutral and more safe. When you genuinely want to inform them of something.\n\nCannot be used in a question",
+    "examples": ""
+  },
+  {
+    "id": 1597087292567,
+    "title": "-잖아(요) expressing that you are right",
+    "tags": "Verb stem",
+    "source": "Billie",
+    "details": "It's something the other person already knows.\nNever polite, even with 요\nComes from -지 않아요\n\n있잔라 Is used at the beginning of a sentence to get their attention. Like \"hey\" in English",
+    "examples": "좋아하잖아 or past tense 좋아했잔하\nHey, you know it's (was) good!\n\n알지 않아요 / 앙잔하요\nHey, you know!\n"
+  },
+  {
+    "id": 1597088155827,
+    "title": "-고 \"and\" or make sound softer",
+    "tags": "Verb stem",
+    "source": "Billie",
+    "details": "1) used to connect sentences with \"and\"\n2) used to make a sentence sound softer. It's not followed by another sentence. Most commonly:\n아니고(요) Which is saying no without making it a statement. When you are not trying to sound super certain. DO NOT OVERUSE",
+    "examples": ""
+  },
+  {
+    "id": 1597421646235,
+    "title": "-나 (doesn't matter what option is chosen)",
+    "tags": "Verb stem",
+    "source": "https://www.italki.com/question/508042",
+    "details": "",
+    "examples": "눈이 오나 비가 오나 그는 닐을 한다\nNo matter if it snows or rains, he works\n"
+  },
+  {
+    "id": 1599586911465,
+    "title": "-지만 (but)",
+    "tags": "Verb stem\nParticle",
+    "source": "",
+    "details": "먼 means only and 지 turns negative\nSo 지만 means not just this, but...",
     "examples": ""
   }
 ]
