@@ -262,5 +262,21 @@
     "source": "",
     "details": "먼 means only and 지 turns negative\nSo 지만 means not just this, but...",
     "examples": ""
+  },
+  {
+    "id": 1600450657361,
+    "title": "-서 (and)",
+    "tags": "Verb conjugated\nSentence connector",
+    "source": "Billie",
+    "details": "Use with conjugated form\nONLY PRESENT TENSE\n해서\n먹어서\n가서\nException: 이다 ->\nAfter consonant: -이라서 instead of -이에요\nAfter vowel: -라서 instead of -예요\n\nRequirement\n1) 2 action verbs are strongly related (while 고 can be for any 2 sentences)\n2) second verb happens right after the first (action verbs)\n3) cause -> effect (action or descriptive verbs)",
+    "examples": ""
+  },
+  {
+    "id": 1600452170258,
+    "title": "-니까 (because)",
+    "tags": "Verb stem\nSetence connector",
+    "source": "Billie",
+    "details": "하다 -> 하니까\n먹다 -> 먹으니까 (으 for consonants)\nException: verb stems ending in ㄹ ㅎ or ㅂ -> remove first and for ㅂ, add 우.\nEg 덥다 -> 더우니까\nWorks with commands.\nThis is informal\n\nCANNOT be used with an emotion (because happy/sad/sorry). Then use -서 instead",
+    "examples": "비가 오니까 우산을 가져가세요\nTake an umbrella because it is raining (command).\n\n비가 오니까 우산을 가져갔어요\nBecause it is raining, I brought zn umbrella.\nNote that with this example, both -서 (cause/effect) and -니까 (because) work"
   }
 ]
